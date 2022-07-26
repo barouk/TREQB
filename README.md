@@ -7,4 +7,4 @@ Time range query is a challenging issue in the Elasticsearch. More specially, wh
 
 Unfortunatly, Discover tools of the Kibana does not have this feature. To this end, you need scripting alongside the query. 
 
-I show the procedure of this work by using Java language in this scipt. 
+I show the procedure of this work by using Java language in this query scipt. 
