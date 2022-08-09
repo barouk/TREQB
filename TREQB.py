@@ -1,16 +1,12 @@
 from elasticsearch import Elasticsearch
 
+es = Elasticsearch(hosts="*.*.*.*", timeout=3000)
 
+start_date = "YYYY-mm-dd"
+end_date = "YYYY-mm-dd"
 
-
-es = Elasticsearch(hosts="192.168.13.244", timeout=3000)
-
-
-start_date = "2021-06-01"
-end_date = "2022-12-25"
-
-start_time = "00:00:00"
-end_time = "23:59:59"
+start_time = "HH:mm:ss"
+end_time = "HH:mm:ss"
 
 DateField="@timestamp"
 
@@ -75,8 +71,5 @@ query = {
         }
     }
 }
-import json
-print(json.dumps(query))
-res=es.search(index="*-raw-*",body=query)['hits']['hits']
 
-print(len(res))
+res = es.search(index = "foo",body=query)['hits']['hits']
